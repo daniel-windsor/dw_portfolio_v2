@@ -48,7 +48,6 @@ const PortfolioDialog = ({ name, descShort, descLong, images, onClose, cell }) =
         className={classes.iconButton}
         onClick={() => handleChangeIndex(-1)}
         style={{ left: -75, zIndex: 2000 }}
-        color="primary"
       >
         <ChevronLeftIcon />
       </IconButton>
@@ -56,7 +55,6 @@ const PortfolioDialog = ({ name, descShort, descLong, images, onClose, cell }) =
         className={classes.iconButton}
         onClick={() => handleChangeIndex(1)}
         style={{ right: -75 }}
-        color="primary"
       >
         <ChevronRightIcon />
       </IconButton>

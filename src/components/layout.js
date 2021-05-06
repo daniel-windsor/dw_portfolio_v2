@@ -2,32 +2,34 @@ import * as React from "react"
 import PropTypes from "prop-types"
 
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
+import CssBaseline from "@material-ui/core/CssBaseline"
 import { ThemeProvider } from "@material-ui/styles"
 import "./layout.css"
 
 import Container from "@material-ui/core/Container"
-
-import Navbar from "./navbar"
+import Game from "./game"
 
 let theme = createMuiTheme({
   overrides: {
     MuiSvgIcon: {
       root: {
-        fontSize: "3rem"
-      }
+        fontSize: "3rem",
+      },
     },
     MuiDialog: {
       paper: {
-        overflowY: "visible"
-      }
-    }
-    
+        overflowY: "visible",
+      },
+    },
   },
   typography: {
     body1: {
-      whiteSpace: "pre-line"
-    }
-  }
+      whiteSpace: "pre-line",
+    },
+  },
+  palette: {
+    type: "dark",
+  },
 })
 
 theme = responsiveFontSizes(theme)
@@ -36,19 +38,9 @@ const Layout = ({ children }) => {
   return (
     <div style={{ width: "100%", minHeight: "100%" }}>
       <ThemeProvider theme={theme}>
-        <Navbar />
-        <Container>
-          {children}
-          <footer
-            style={{
-              marginTop: `2rem`,
-            }}
-          >
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.com">Gatsby</a>
-          </footer>
-        </Container>
+        <CssBaseline />
+        <Game />
+        <Container style={{ zIndex: 1 }}>{children}</Container>
       </ThemeProvider>
     </div>
   )
