@@ -1,0 +1,31 @@
+[
+  {
+    "name": "ONI Coaching Platform",
+    "desc": "I was the sole developer contracted to produce a client management system for ONI Gym.  It gives trainers the ability to graph a client's progress against custom metrics and create bespoke exercise or nutrition plans.\n\nThis program is built using React on top of Google Firebase",
+    "descLong": "More info goes here",
+    "imageKey": "oni_"
+  },
+  {
+    "name": "SpacePants",
+    "desc": "As a final project submission for my dev course, I led a team of developers to create SpacePants, a mobile-based hidden role party game.\n\nThis program is built using React on a Node.js backend, utilising web sockets",
+    "link1": "https://spacepants.herokuapp.com/#/",
+    "link2": "https://github.com/piwakawaka-2020/SpacePants-frontEnd",
+    "imageKey": "sp_",
+    "cell": true
+  },
+  {
+    "name": "Chess, For The Sophisticated",
+    "desc": "One of my first projects.  Chess in pure JavaScript, with a rudimentary AI to play against",
+    "link1": "https://daniel-windsor.github.io/sophistocated-chess/",
+    "link2": "https://github.com/daniel-windsor/sophistocated-chess",
+    "imageKey": "chess_"
+
+  },
+  {
+    "name": "Untitled CLI Game",
+    "desc": "As an exercise to learn C#, I created a classic command line game.  Currently there are options to gather materials and craft items, as well as a survival system involving health, stamina and temperature.",
+    "link2": "https://github.com/daniel-windsor/cli_game",
+    "imageKey": "cli_",
+    "cell": true
+  }
+]
