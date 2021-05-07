@@ -24,7 +24,7 @@ firebase.initializeApp(firebaseConfig)
 const IndexPage = () => {
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Dan Windsor"/>
       <Splash />
       <About />
       <Portfolio />

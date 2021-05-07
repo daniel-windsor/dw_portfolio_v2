@@ -11,11 +11,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-  },
-  textContainer: {
-    position: "relative",
-    bottom: 100,
-  },
+  }
 }))
 const Splash = () => {
   const classes = useStyles()
@@ -23,7 +19,7 @@ const Splash = () => {
   return (
     <div className={classes.root}>
       <Fade in={true} timeout={600}>
-        <div className={classes.textContainer}>
+        <div>
           <Typography variant="h1">Hi!</Typography>
           <Typography variant="h1">I'm Daniel,</Typography>
           <Typography variant="h1">A Web Developer</Typography>

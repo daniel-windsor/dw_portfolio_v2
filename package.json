@@ -2,7 +2,7 @@
   "name": "dw-portfolio",
   "private": true,
   "description": "A virtual CV showcasing my work",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "Daniel Windsor - daniel.windsor@protonmail.com",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
