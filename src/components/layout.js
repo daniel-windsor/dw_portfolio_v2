@@ -7,7 +7,7 @@ import { ThemeProvider } from "@material-ui/styles"
 import "./layout.css"
 
 import Container from "@material-ui/core/Container"
-import Game from "./game"
+// import Game from "./game"
 
 let theme = createMuiTheme({
   overrides: {
@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
     <div style={{ width: "100%", minHeight: "100%" }}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Game />
+        {/* <Game /> */}
         <Container style={{ zIndex: 1 }}>{children}</Container>
       </ThemeProvider>
     </div>
