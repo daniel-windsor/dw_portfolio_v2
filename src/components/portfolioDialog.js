@@ -13,6 +13,13 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
   },
+  cell: {
+    width: 400,
+    [theme.breakpoints.down('xs')]: {
+      height: "80%",
+      width: "auto"
+    }
+  },
   imageContainer: {
     position: "relative",
     display: "flex",
@@ -23,8 +30,7 @@ const useStyles = makeStyles(theme => ({
     top: "50%",
     transform: "translateY(-50%)",
     [theme.breakpoints.down('sm')]: {
-      // bottom: -25,
-      top: "120%"
+      top: "calc(100% + 24px)"
     }
   },
 }))
@@ -48,21 +54,21 @@ const PortfolioDialog = ({ images, cell }) => {
   }
 
   return (
-    <div className={classes.root} style={cell ? { width: 400 } : undefined}>
+    <div className={`${classes.root} ${cell ? classes.cell : undefined}`}>
       {images.length && (
         <GatsbyImage image={images[imageIndex]} alt="" />
       )}
       <IconButton
         className={classes.iconButton}
         onClick={() => handleChangeIndex(-1)}
-        style={{ left: mobile ? 75 : -75, zIndex: 2000 }}
+        style={{ left: mobile ? 0 : -75, zIndex: 2000 }}
       >
         <ChevronLeftIcon />
       </IconButton>
       <IconButton
         className={classes.iconButton}
         onClick={() => handleChangeIndex(1)}
-        style={{ right: mobile ? 75 : -75 }}
+        style={{ right: mobile ? 0 : -75 }}
       >
         <ChevronRightIcon />
       </IconButton>

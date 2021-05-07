@@ -6,7 +6,7 @@
   },
   {
     "name": "Gamefroot",
-    "desc": "Gamefroot is an application that teaches coding to children through game development.  During my contract I rebuilt parts of the code base to be in line with modern standards, as well as updated a lot of the user interface.\n\nThis program uses React with Typescript, a Node.js backend, Google cloud, docker and kubernetes",
+    "desc": "Gamefroot is an application that teaches coding to children through game development.  During my contract I rebuilt parts of the code base to be in line with modern standards, as well as updated a lot of the user interface.\n\nThis program uses React with Typescript, and a Node.js backend",
     "link1": "https://make.gamefroot.com/",
     "imageKey": "gf_"
   },
