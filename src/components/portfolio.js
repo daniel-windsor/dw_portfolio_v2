@@ -19,10 +19,7 @@ const Portfolio = () => {
           node {
             name
             childImageSharp {
-              gatsbyImageData(
-                width: 800
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(width: 800, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -46,7 +43,7 @@ const Portfolio = () => {
   }
 
   return (
-    <div>
+    <div style={{ marginTop: 42, marginBottom: 84 }}>
       <Typography variant="h2">My Portfolio</Typography>
 
       <Grid container spacing={2} style={{ marginTop: 28 }}>

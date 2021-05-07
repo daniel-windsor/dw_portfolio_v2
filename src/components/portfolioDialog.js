@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles'
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import IconButton from "@material-ui/core/IconButton"
@@ -20,12 +22,18 @@ const useStyles = makeStyles(theme => ({
     position: "absolute",
     top: "50%",
     transform: "translateY(-50%)",
+    [theme.breakpoints.down('sm')]: {
+      // bottom: -25,
+      top: "120%"
+    }
   },
 }))
 
-const PortfolioDialog = ({ name, descShort, descLong, images, onClose, cell }) => {
+const PortfolioDialog = ({ images, cell }) => {
   const [imageIndex, setImageIndex] = useState(0)
   const classes = useStyles()
+  const theme = useTheme()
+  const mobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   const handleChangeIndex = delta => {
     if (delta > 0 && imageIndex === images.length - 1) {
@@ -47,14 +55,14 @@ const PortfolioDialog = ({ name, descShort, descLong, images, onClose, cell }) =
       <IconButton
         className={classes.iconButton}
         onClick={() => handleChangeIndex(-1)}
-        style={{ left: -75, zIndex: 2000 }}
+        style={{ left: mobile ? 75 : -75, zIndex: 2000 }}
       >
         <ChevronLeftIcon />
       </IconButton>
       <IconButton
         className={classes.iconButton}
         onClick={() => handleChangeIndex(1)}
-        style={{ right: -75 }}
+        style={{ right: mobile ? 75 : -75 }}
       >
         <ChevronRightIcon />
       </IconButton>

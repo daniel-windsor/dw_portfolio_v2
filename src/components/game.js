@@ -6,24 +6,17 @@ import flaresJson from "../game/flares.json"
 class Game extends React.Component {
   componentDidMount() {
     var graphics
-    var cursor
 
     const config = {
       type: Phaser.WEBGL,
-      width: window.innerWidth,
+      width: "100%",
       height: window.innerHeight,
-      // transparent: true,
-      background: "#000",
+      transparent: true,
       scene: {
         preload: function () {
-          this.load.atlas(
-            "flares",
-            flares,
-            flaresJson
-          )
+          this.load.atlas("flares", flares, flaresJson)
         },
         create: function () {
-          cursor = new Phaser.Geom.Circle(0, 0, 26)
           var emitZone = new Phaser.Geom.Rectangle(
             0,
             0,
@@ -34,35 +27,29 @@ class Game extends React.Component {
           var particles = this.add.particles("flares")
 
           var emitter = particles.createEmitter({
-            frame: ["red", "green", "blue"],
+            frame: ["blue", "white"],
             speed: { min: -20, max: 20 },
             frequency: 1000,
-            lifespan: 10000,
-            quantity: 5,
+            lifespan: { min: 5000, max: 10000 },
+            quantity: { min: 1, max: 5 },
             scale: { min: 0.1, max: 0.4 },
             blendMode: "ADD",
             emitZone: { source: emitZone },
-            deathZone: { type: "onEnter", source: cursor },
-            on: false
+            bounds: {x: 0, y: 0, w: "100%", h: window.innerHeight - 10},
+            collideBottom: true,
+            bounce: 0.9
           })
 
           emitter.setAlpha(function (p, k, t) {
-            return 1 - 2 * Math.abs(t - 0.5);
+            return 1 - 2 * Math.abs(t - 0.5)
           })
 
           emitter.start()
 
           graphics = this.add.graphics()
-
-          this.input.on("pointermove", pointer => {
-            cursor.x = pointer.x
-            cursor.y = pointer.y
-          })
         },
         update: function () {
           graphics.clear()
-          // graphics.lineStyle(1, 0x00ff00, 1)
-          graphics.strokeCircleShape(cursor)
         },
       },
     }
